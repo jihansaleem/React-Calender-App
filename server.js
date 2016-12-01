@@ -73,7 +73,7 @@ new Event({id: 3})
     })
 });
 
-
+app.use(express.static(__dirname + '/calendar-front/build'));
 
 const Port = process.env.PORT || 8080;
 
@@ -81,6 +81,8 @@ app.listen(PORT, function(){
 	console.log("Listening on Port:%s",PORT)
 	console.log("Stop with Ctrl+C");
 });
+
+
 
 
 // app.listen(8080, () => {
