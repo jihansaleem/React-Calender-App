@@ -73,7 +73,7 @@ new Event({id: 3})
     })
 });
 
-app.use(express.static(__dirname + '/calendar-front/build'));
+app.use(express.static(__dirname + './calendar-front/build'));
 
 const PORT = process.env.PORT || 8080;
 
