@@ -12,6 +12,8 @@ const knex = require('knex')({
   }
 });
 
+app.use(express.static(__dirname + './calendar-front/build'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 const bookshelf = require('bookshelf')(knex);
@@ -73,7 +75,7 @@ new Event({id: 3})
     })
 });
 
-app.use(express.static(__dirname + './calendar-front/build'));
+
 
 
 const PORT = process.env.PORT || 8080;
