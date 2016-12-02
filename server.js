@@ -74,8 +74,8 @@ new Event({id: 3})
 });
 
 
-
-const Port = process.env.PORT || 8080;
+app.use(express.static(__dirname + './calendar-front/build'));
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function(){
 	console.log("Listening on Port:%s",PORT)
