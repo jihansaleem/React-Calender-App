@@ -52,6 +52,7 @@ class Calendar extends React.Component{
     }
 
     render() {
+        console.log(this.state.month)
         return <div className="calendar">
             <div className="header">
                 <i className="fa fa-angle-left" onClick={this.previous}></i>
