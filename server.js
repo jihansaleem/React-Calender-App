@@ -32,9 +32,9 @@ const Note = bookshelf.Model.extend({
     }
 })
 
-app.get('/',(req,res)=>{
-    res.send("HI")
-});
+// app.get('/',(req,res)=>{
+//     res.send("HI")
+// });
 
 //to get all events.
 app.get('/events',(req,res)=>{

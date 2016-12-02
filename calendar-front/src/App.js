@@ -3,25 +3,27 @@ import logo from './family.png';
 import './App.css';
 
 var moment = require('moment');
-moment().format();
+
 
 class App extends Component {
   render() {
+   let   current = moment();
+   console.log(current);
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>The Ultimate Family Calendar</h2>
         </div>
-        <Calendar/>
+        <Calendar selected = {current}/>
       </div>
     );
   }
 }
 
 class Calendar extends React.Component{
-  constructor(){
-		super();
+  constructor(props){
+		super(props);
 
 	
 	this.previous = this.previous.bind(this);
@@ -50,7 +52,7 @@ class Calendar extends React.Component{
     }
 
     render() {
-        return <div>
+        return <div className="calendar">
             <div className="header">
                 <i className="fa fa-angle-left" onClick={this.previous}></i>
                 {this.renderMonthLabel()}
