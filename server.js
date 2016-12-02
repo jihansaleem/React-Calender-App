@@ -12,7 +12,7 @@ const knex = require('knex')({
   }
 });
 
-app.use(express.static(__dirname + './calendar-front/build'));
+app.use(express.static(__dirname + '/calendar-front/build'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -31,6 +31,10 @@ const Note = bookshelf.Model.extend({
         return this.belongsTo(Event)
     }
 })
+
+app.get('/',(req,res)=>{
+    res.send("HI")
+});
 
 //to get all events.
 app.get('/events',(req,res)=>{
