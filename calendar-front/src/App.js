@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import logo from './family.png';
 import './App.css';
 
-var moment = require('moment');
-moment().format();
+// var moment = require('moment');
+// moment().format();
 
 class App extends Component {
   render() {
@@ -23,19 +23,12 @@ class Calendar extends React.Component{
   constructor(){
 		super();
 
-		this.getInitialState = this.getInitialState.bind(this);
 		this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
     this.select = this.select.bind(this);
+    this.state = {month: this.props.selected.clone()};
 	}
 
-  
-    getInitialState() {
-      
-        return {
-            month: this.props.selected.clone()
-        };
-    }
 
     previous() {
         var month = this.state.month;
